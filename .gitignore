@@ -365,5 +365,7 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,jetbrains,pycharm+all,visualstudiocode
 
+.vscode/
 
 .tool-versions
+log/
