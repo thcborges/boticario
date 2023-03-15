@@ -1,0 +1,1 @@
+from boticario.core.app.base_ingestion_task import BaseIngestionTask

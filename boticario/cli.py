@@ -1,5 +1,6 @@
 import click
 
+from boticario import BaseIngestionTask
 from boticario.logger import config_logger, get_logging
 
 logging = get_logging(__name__)
@@ -13,3 +14,4 @@ def main():
 @main.command()
 def base_ingestion_task():
     logging.info('base ingestion task')
+    BaseIngestionTask().run()
