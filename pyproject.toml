@@ -2,7 +2,7 @@
 name = "boticario"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Thiago da Cunha Borges <thcborges@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -20,7 +20,20 @@ boticario = "boticario.cli:main"
 [tool.poetry.group.dev.dependencies]
 blue = "^0.9.1"
 isort = "^5.12.0"
+taskipy = "^1.10.3"
+pytest = "^7.2.2"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.taskipy.tasks]
+lint_check = "blue --check --diff .; isort --check --diff ."
+lint = "blue . && isort ."
+pre_test = "task lint_check"
+test = "pytest -s -x -vv"

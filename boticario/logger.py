@@ -1,8 +1,8 @@
 import logging
 import logging.config
 
-from decouple import config
 import yaml
+from decouple import config
 
 from boticario.core.helpers.path import get_config_file, get_logging_path
 
