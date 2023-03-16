@@ -14,7 +14,9 @@ class FileReader:
         suffix = self.filename.suffix
         ReaderCls = self.__readers.get(suffix)
 
-        if issubclass(ReaderCls, Reader):
-            raise NotImplementedError('There is no reader for {suffix} files')
+        if not issubclass(ReaderCls, Reader):
+            raise NotImplementedError(
+                'There is no reader for %s files', suffix
+            )
 
         return ReaderCls(self.filename)
