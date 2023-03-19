@@ -1,6 +1,8 @@
 from datetime import date
 from pathlib import Path
 
+from decouple import config
+
 PROCESSED_FOLDER = '.processed'
 
 
@@ -38,6 +40,13 @@ def set_processed_folder(path: Path | str) -> Path:
 
 def is_processed_path(path: Path | str) -> bool:
     return PROCESSED_FOLDER in Path(path).parts
+
+
+def get_s3_uri(local_path: Path) -> str:
+    S3_BUCKET = config('S3_BUCKET')
+    s3_root = ROOT_PATH.parents[1]
+    s3_path = str(local_path).replace(str(s3_root), S3_BUCKET)
+    return s3_path
 
 
 ROOT_PATH = get_root_path()
