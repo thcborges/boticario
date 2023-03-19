@@ -42,3 +42,4 @@ def is_processed_path(path: Path | str) -> bool:
 
 ROOT_PATH = get_root_path()
 DATA_PATH = ROOT_PATH / 'data'
+QUERY_PATH = ROOT_PATH / 'core' / 'sql'

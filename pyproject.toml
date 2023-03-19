@@ -12,6 +12,9 @@ pandas = "^1.5.3"
 openpyxl = "^3.1.2"
 pyyaml = "^6.0"
 python-decouple = "^3.8"
+pyarrow = "^11.0.0"
+spotipy = "^2.22.1"
+psycopg2-binary = "^2.9.5"
 
 [tool.poetry.scripts]
 boticario = "boticario.cli:main"
@@ -22,6 +25,7 @@ blue = "^0.9.1"
 isort = "^5.12.0"
 taskipy = "^1.10.3"
 pytest = "^7.2.2"
+ipython = "^8.11.0"
 
 [build-system]
 requires = ["poetry-core"]
