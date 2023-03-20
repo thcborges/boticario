@@ -5,4 +5,5 @@ from boticario.core import (
     BaseTable3Task,
     BaseTable4Task,
     SpotifyDataHackersExtract50Task,
+    SpotifyDataHackersExtractFullTask,
 )
