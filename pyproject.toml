@@ -6,7 +6,7 @@ authors = ["Thiago da Cunha Borges <thcborges@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 click = "^8.1.3"
 pandas = "^1.5.3"
 openpyxl = "^3.1.2"
