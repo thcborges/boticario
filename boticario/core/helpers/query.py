@@ -13,6 +13,9 @@ class QueryFactory:
         'create_table2': QUERY_PATH / 'create_table2.sql',
         'create_table3': QUERY_PATH / 'create_table3.sql',
         'create_table4': QUERY_PATH / 'create_table4.sql',
+        'create_table5': QUERY_PATH / 'create_table5.sql',
+        'create_table6': QUERY_PATH / 'create_table6.sql',
+        'create_table7': QUERY_PATH / 'create_table7.sql',
     }
 
     def __init__(self, query: str, **kwargs) -> None:

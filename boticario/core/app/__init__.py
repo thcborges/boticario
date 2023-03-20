@@ -9,3 +9,6 @@ from boticario.core.app.spotify_data_hackers_extract_50_task import (
 from boticario.core.app.spotify_data_hackers_extract_full_task import (
     SpotifyDataHackersExtractFullTask,
 )
+from boticario.core.app.spotify_table5_task import SpotifyTable5Task
+from boticario.core.app.spotify_table6_task import SpotifyTable6Task
+from boticario.core.app.spotify_table7_task import SpotifyTable7Task

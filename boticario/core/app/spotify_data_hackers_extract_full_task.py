@@ -25,7 +25,9 @@ class SpotifyDataHackersExtractFullTask(Task):
         s3_key = (
             f'{self.__s3_path}/spotify_data_hackers_full_{timestamp}.parquet'
         )
-        SpotifyDlo.copy_data_frame_to_redshift(data_frame, s3_key)
+        SpotifyDlo.copy_data_frame_to_spotify_data_hackers_full(
+            data_frame, s3_key
+        )
 
     def run(self):
         data_frame = self.__get_api_data()

@@ -6,4 +6,7 @@ from boticario.core import (
     BaseTable4Task,
     SpotifyDataHackersExtract50Task,
     SpotifyDataHackersExtractFullTask,
+    SpotifyTable5Task,
+    SpotifyTable6Task,
+    SpotifyTable7Task,
 )

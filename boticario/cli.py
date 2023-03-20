@@ -10,6 +10,9 @@ from boticario import (
     BaseTable4Task,
     SpotifyDataHackersExtract50Task,
     SpotifyDataHackersExtractFullTask,
+    SpotifyTable5Task,
+    SpotifyTable6Task,
+    SpotifyTable7Task,
 )
 from boticario.core.services.spotify_api import SpotifyAPI
 from boticario.logger import config_logger, get_logging
@@ -112,7 +115,7 @@ def base_task_group():
 
 @main.command()
 def spotify_50_task():
-    logging.info('base create table 4')
+    logging.info('spotify extract first 50 records from data hackers podcast')
     try:
         SpotifyDataHackersExtract50Task().run()
     except BaseException as error:
@@ -121,10 +124,78 @@ def spotify_50_task():
 
 
 @main.command()
+def spotify_create_table5_task():
+    logging.info('spotify create table 5')
+    try:
+        SpotifyTable5Task().run()
+    except BaseException as error:
+        logging.error(str(error))
+        logging.error(traceback.format_exc())
+
+
+@main.command()
 def spotify_full_task():
-    logging.info('base create table 4')
+    logging.info('spotify extract all records from data hackers podcast')
     try:
         SpotifyDataHackersExtractFullTask().run()
+    except BaseException as error:
+        logging.error(str(error))
+        logging.error(traceback.format_exc())
+
+
+@main.command()
+def spotify_create_table6_task():
+    logging.info('spotify create table 6')
+    try:
+        SpotifyTable6Task().run()
+    except BaseException as error:
+        logging.error(str(error))
+        logging.error(traceback.format_exc())
+
+
+@main.command()
+def spotify_create_table7_task():
+    logging.info('spotify create table 7')
+    try:
+        SpotifyTable7Task().run()
+    except BaseException as error:
+        logging.error(str(error))
+        logging.error(traceback.format_exc())
+
+
+@main.command()
+def spotify_task_group():
+    logging.info('spotify extract first 50 records from data hackers podcast')
+    try:
+        SpotifyDataHackersExtract50Task().run()
+    except BaseException as error:
+        logging.error(str(error))
+        logging.error(traceback.format_exc())
+
+    logging.info('spotify create table 5')
+    try:
+        SpotifyTable5Task().run()
+    except BaseException as error:
+        logging.error(str(error))
+        logging.error(traceback.format_exc())
+
+    logging.info('spotify extract all records from data hackers podcast')
+    try:
+        SpotifyDataHackersExtractFullTask().run()
+    except BaseException as error:
+        logging.error(str(error))
+        logging.error(traceback.format_exc())
+
+    logging.info('spotify create table 6')
+    try:
+        SpotifyTable6Task().run()
+    except BaseException as error:
+        logging.error(str(error))
+        logging.error(traceback.format_exc())
+
+    logging.info('spotify create table 7')
+    try:
+        SpotifyTable7Task().run()
     except BaseException as error:
         logging.error(str(error))
         logging.error(traceback.format_exc())
