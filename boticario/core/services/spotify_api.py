@@ -35,10 +35,12 @@ class SpotifyAPI:
             episodes = data.get('episodes', {})
 
             if not episodes:
+                logging.info('There is no podcast episodes for this search')
                 return result
 
             items = episodes.get('items', [])
             if not items:
+                logging.info('There is no more episodes to reach')
                 return result
 
             result += items
