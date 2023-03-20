@@ -15,3 +15,12 @@ class SpotifyDao:
             for column in ['external_urls', 'images', 'languages']:
                 data_frame[column] = data_frame[column].astype(str)
         return data_frame
+
+    @staticmethod
+    def get_records_to_data_hackers_search() -> DataFrame:
+        data = SpotifyAPI().get_episodes('data hackers', 5000)
+        data_frame = DataFrame(data)
+        if not data_frame.empty:
+            for column in ['external_urls', 'images', 'languages']:
+                data_frame[column] = data_frame[column].astype(str)
+        return data_frame
