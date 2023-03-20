@@ -9,6 +9,7 @@ from boticario import (
     BaseTable3Task,
     BaseTable4Task,
     SpotifyDataHackersExtract50Task,
+    SpotifyDataHackersExtractFullTask,
 )
 from boticario.core.services.spotify_api import SpotifyAPI
 from boticario.logger import config_logger, get_logging
@@ -110,10 +111,20 @@ def base_task_group():
 
 
 @main.command()
-def spotify():
+def spotify_50_task():
     logging.info('base create table 4')
     try:
         SpotifyDataHackersExtract50Task().run()
+    except BaseException as error:
+        logging.error(str(error))
+        logging.error(traceback.format_exc())
+
+
+@main.command()
+def spotify_full_task():
+    logging.info('base create table 4')
+    try:
+        SpotifyDataHackersExtractFullTask().run()
     except BaseException as error:
         logging.error(str(error))
         logging.error(traceback.format_exc())
